@@ -1,0 +1,172 @@
+/* .App { */
+
+/* text-align: center; */
+
+/* } */
+
+#orderDetails,
+#customerDetails,
+#currencyDetails,
+#addressDetails {
+  display: flex;
+  margin: 15px 20px;
+  justify-content: space-between;
+}
+#locationDetails {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px;
+}
+#locationDetails .divTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.state {
+  width: 120px;
+}
+.date .field,
+.orderReference .field {
+  width: 300px;
+}
+.orderStatus select {
+  width: 380px;
+}
+
+#addressDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  background-color: blue;
+  color: white;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  width: 100%;
+  height: 35px;
+  margin: 15px 0px;
+  border-style: double;
+}
+.city,
+.state,
+.postal,
+.country {
+  display: flex;
+  align-items: center;
+}
+.city > .field {
+  width: 310px;
+}
+.postal > .field {
+  width: 120px;
+}
+#currencyDetails .field {
+  width: 300px;
+}
+#currencyDetails select {
+  width: 290px;
+}
+.name,
+.discription {
+  width: 48%;
+}
+
+#locationDetails > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#locationDetails > input[type="text"] {
+  width: 235px;
+}
+
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 15px 0;
+  width: 240px;
+  height: 40px;
+  padding:0 10px;
+  background-color: white;
+  border-color: black;
+  border-width: 2px;
+  position: relative;
+  pointer-events: all;
+}
+/* select {
+  background-image: url("./downArrow");
+  background-position: calc(100% - 14px) calc(1em + 2px),
+    calc(100% - 6px) calc(1em + 2px), 100% -2px;
+  background-size: 12px 9px, 8px 11px, 2.5em 4.5em;
+  background-repeat: no-repeat;
+} */
+.selectField{
+  position: relative;
+}
+.selectField::after{
+  content: 'V';
+  color: white;
+  position: absolute;
+  right: 2px;
+  background-color: #3168fb;
+  height: 36px;
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+}
+.divTitle {
+  color: blue;
+}
+
+.selectField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
