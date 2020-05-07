@@ -9,8 +9,25 @@
 #currencyDetails,
 #addressDetails {
   display: flex;
-  margin: 15px 20px;
+  margin: 8px 20px;
   justify-content: space-between;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.submit {
+  display: flex;
+  justify-content: flex-end;
+  margin: 6px 20px;
+}
+button {
+  height: 45px;
+  width: 80px;
+  border: none;
+  background-color: #3168fb;
+  color: white;
 }
 #locationDetails {
   display: flex;
@@ -23,7 +40,7 @@
   align-items: center;
 }
 .state {
-  width: 120px;
+  width: 180px;
 }
 .date .field,
 .orderReference .field {
@@ -50,21 +67,33 @@
 .field {
   width: 100%;
   height: 35px;
-  margin: 15px 0px;
+  margin: 7px 0px;
   border-style: double;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 80px;
+}
+.title a {
+  color: white;
+  margin: 0px 15px;
+  padding: 14px;
+  text-decoration: none;
 }
 .city,
 .state,
 .postal,
 .country {
   display: flex;
-  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
 }
 .city > .field {
   width: 310px;
 }
 .postal > .field {
-  width: 120px;
+  width: 180px;
 }
 #currencyDetails .field {
   width: 300px;
@@ -73,7 +102,7 @@
   width: 290px;
 }
 .name,
-.discription {
+.description {
   width: 48%;
 }
 
@@ -93,15 +122,36 @@ select {
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
-  margin: 15px 0;
+  margin: 7px 0;
   width: 240px;
   height: 40px;
-  padding:0 10px;
+  padding: 0 10px;
   background-color: white;
   border-color: black;
   border-width: 2px;
   position: relative;
   pointer-events: all;
+}
+#salesOrderTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table {
+  width: 98%;
+}
+table th {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+}
+table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+tbody {
+  text-align: center;
 }
 /* select {
   background-image: url("./downArrow");
@@ -110,14 +160,16 @@ select {
   background-size: 12px 9px, 8px 11px, 2.5em 4.5em;
   background-repeat: no-repeat;
 } */
-.selectField{
-  position: relative;
+.error {
+  height: 15px;
+  color: red;
 }
-.selectField::after{
-  content: 'V';
+.selectField::after {
+  content: "V";
   color: white;
   position: absolute;
   right: 2px;
+  top: 9px;
   background-color: #3168fb;
   height: 36px;
   pointer-events: all;
@@ -131,9 +183,11 @@ select {
 }
 
 .selectField {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .App-logo {
