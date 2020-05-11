@@ -30,8 +30,7 @@ function OrderDetails(props) {
             className="select"
             onChange={props.info}
             name="status"
-            defaultValue="select"
-            // value={props.state.status}
+            value={props.state.status}
           >
             {props.invoiceDetails.map((item, index) =>
               index === 0 ? (
@@ -118,8 +117,7 @@ function CurrencyDetails(props) {
             className="select"
             onChange={props.info}
             name="currencyFormat"
-            defaultValue="select"
-            // value={props.state.currencyFormat}
+            value={props.state.currencyFormat}
           >
             {props.currencyOptions.map((item, index) =>
               index === 0 ? (
@@ -144,8 +142,7 @@ function CurrencyDetails(props) {
             className="select"
             onChange={props.info}
             name="freight"
-            defaultValue="select"
-            // value={props.state.freight}
+            value={props.state.freight}
           >
             {props.freightOptions.map((item, index) =>
               index === 0 ? (
@@ -170,8 +167,7 @@ function CurrencyDetails(props) {
             className="select"
             onChange={props.info}
             name="shipping"
-            defaultValue="select"
-            // value={props.state.shipping}
+            value={props.state.shipping}
           >
             {props.shipMethod.map((item, index) =>
               index === 0 ? (
@@ -260,15 +256,7 @@ function LocationDetails(props) {
             options={props.state.info}
             onChange={props.info}
             name="country"
-            defaultValue="select"
-            // value={()=>{
-            //   debugger
-            //   if(props.state["country"].length===0){
-            //     debugger
-            //     console.log("yes")
-            //     // return 'select'
-            //   }
-            // }}
+            value={props.state.country}
           >
             {props.countryField.map((item, index) =>
               index === 0 ? (
@@ -295,22 +283,23 @@ class MainComponent extends Component {
     this.state = {
       userDetails: {
         date: "",
-        status: "",
+        status: "select",
         refNum: "",
         name: "",
         discription: "",
         totalAmount: "",
-        currencyFormat: "",
-        freight: "",
-        shipping: "",
+        currencyFormat: "select",
+        freight: "select",
+        shipping: "select",
         addressLine1: "",
         addressLine2: "",
         city: "",
         state: "",
         postal: "",
-        country: "",
+        country: "select",
       },
       errors: {},
+      isOnSelect: true,
     };
   }
   handleClick = () => {
@@ -353,14 +342,14 @@ class MainComponent extends Component {
       this.setState({
         userDetails: {
           date: "",
-          status: "",
+          status: "select",
           refNum: "",
           name: "",
           discription: "",
           totalAmount: "",
-          currencyFormat: "",
-          freight: "",
-          shipping: "",
+          currencyFormat: "select",
+          freight: "select",
+          shipping: "select",
           addressLine1: "",
           addressLine2: "",
           city: "",
@@ -369,6 +358,7 @@ class MainComponent extends Component {
           country: "select",
         },
         errors: errors,
+        isOnSelect: false,
       });
       console.log(this.state.userDetails["country"]);
     }
@@ -409,6 +399,7 @@ class MainComponent extends Component {
           info={this.collectInfo}
           error={this.state.errors}
           state={this.state.userDetails}
+          states={this.state}
         />
         <div className="submit">
           <button onClick={this.submitUserInfo.bind(this, this.handleClick)}>
